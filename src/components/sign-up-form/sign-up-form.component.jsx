@@ -5,6 +5,7 @@ import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from 'ut
 import './sign-up-form.styles.scss'
 import Button from 'components/button/button.component'
 
+
 const defaultFormFields = {
 	displayName: '',
 	email: '',
@@ -27,7 +28,9 @@ const SignUpForm = () => {
 		}
 		try {
 			const {user} = await createAuthUserWithEmailAndPassword(email, password)
+
 			await createUserDocumentFromAuth(user, {displayName})
+
 			resetFormFields()
 		} catch (error) {
 			if (error.code === 'auth/email-already-in-use') {

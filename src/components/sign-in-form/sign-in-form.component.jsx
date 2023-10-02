@@ -2,7 +2,6 @@ import FormInput from 'components/form-input/form-input.component'
 import {React, useState} from 'react'
 import {
 	signInWithGooglePopup,
-	createUserDocumentFromAuth,
 	signInAuthUserWithEmailAndPassword,
 } from 'utils/firebase/firebase.utils'
 
@@ -22,24 +21,22 @@ const SignInForm = () => {
 	}
 
 	const signInWithGoogle = async () => {
-		try {
-			const {user} = await signInWithGooglePopup()
-			await createUserDocumentFromAuth(user)
-		} catch (error) {
-			if (error.code === 'auth/popup-closed-by-user') {
-				console.log('user closed popup')
-			} else {
-				console.error('Firebase error ocured:', error)
-			}
-		}
-
+		await signInWithGooglePopup()
+		// try {
+		// } catch (error) {
+		// 	if (error.code === 'auth/popup-closed-by-user') {
+		// 		console.log('user closed popup')
+		// 	} else {
+		// 		console.error('Firebase error ocured:', error)
+		// 	}
+		// }
 	}
 
 	const handleSubmit = async event => {
 		event.preventDefault()
 
 		try {
-			const response = await signInAuthUserWithEmailAndPassword(email, password)
+			const {user} = await signInAuthUserWithEmailAndPassword(email, password)
 			resetFormFields()
 		} catch (error) {
 			switch (error.code) {
