@@ -14,9 +14,6 @@ import CartDropdown from 'components/cart-dropdown/cart-dropdown.component'
 const Navigation = () => {
 	const {currentUser} = useContext(UserContext)
 	const {isCartOpen} = useContext(CartContext)
-	const handleDropdown = () => {
-
-	}
 
 	return (
 		<Fragment>
@@ -35,7 +32,7 @@ const Navigation = () => {
 							SIGN IN
 							</Link>
 					}
-					<CartIcon onClick={handleDropdown}/>
+					<CartIcon/>
 				</div>
 				{isCartOpen && <CartDropdown/>}
 			</div>
