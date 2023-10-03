@@ -4,7 +4,7 @@
     height: 340px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid black;
     background-color: white;
     top: 90px;
@@ -22,8 +22,10 @@
       flex-direction: column;
       overflow-x: hidden;
       overflow-y: scroll;
+      /* Define the scrollbar style */
+      
     }
-  
+
     button {
       margin-top: auto;
     }
