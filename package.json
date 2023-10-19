@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
+    "@stripe/react-stripe-js": "^2.3.1",
+    "@stripe/stripe-js": "^2.1.9",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "babel-eslint": "^10.1.0",
+    "dotenv": "^16.3.1",
     "eslint": "^8.32.0",
     "eslint-plugin-flow": "^2.29.1",
     "eslint-plugin-flowtype": "^8.0.3",
@@ -33,6 +36,7 @@
     "redux-thunk": "^2.4.2",
     "reselect": "^4.1.8",
     "sass": "^1.68.0",
+    "stripe": "^14.1.0",
     "styled-components": "^6.0.8",
     "web-vitals": "^2.1.4"
   },
