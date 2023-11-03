@@ -1,5 +1,10 @@
 module.exports = {
-	'parser': '@babel/eslint-parser',
+	'parser': '@typescript-eslint/parser',
+	'extends': [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		// Другие конфигурации ESLint
+	],
 	'env': {
 		'browser': true,
 		'commonjs': true,
@@ -21,6 +26,7 @@ module.exports = {
 		'react',
 		'flowtype',
 		'jest',
+		'@typescript-eslint',
 	],
 	'rules': {
 		'for-direction': 'error',
